@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+	<div class="row">
+		<div class="col-md-12">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							 <li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<h2>{{item.name}}</h2>
+			<div class="item">
+				<p>{{item.description}}</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
